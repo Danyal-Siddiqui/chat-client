@@ -8,5 +8,5 @@
 
 ## Steps to use the application:
 1: Go to http://localhost:5000/swagger/index.html
-		* Here you can publish message along with your username with this endpoint api/v1/chat-client/publish-message
-		* To get all the publish message you can use this endpoint api/v1/chat-client/get-all-messages
+2: To publish message along with your username use this endpoint ```api/v1/chat-client/publish-message```
+3: To get all the publish message you can use this endpoint ```api/v1/chat-client/get-all-messages```
