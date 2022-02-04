@@ -7,11 +7,13 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="NATS.Client.Extensions.DependencyInjection" Version="1.0.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\ChatClient.Application\ChatClient.Application.csproj" />
+      <ProjectReference Include="..\ChatClient.Contracts\ChatClient.Contracts.csproj" />
       <ProjectReference Include="..\ChatClient.Domain\ChatClient.Domain.csproj" />
       <ProjectReference Include="..\ChatClient.Infrastructure\ChatClient.Infrastructure.csproj" />
     </ItemGroup>

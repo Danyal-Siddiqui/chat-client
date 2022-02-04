@@ -8,7 +8,12 @@
 
     <ItemGroup>
       <ProjectReference Include="..\ChatClient.Application\ChatClient.Application.csproj" />
+      <ProjectReference Include="..\ChatClient.Contracts\ChatClient.Contracts.csproj" />
       <ProjectReference Include="..\ChatClient.Domain\ChatClient.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="NATS.Client" Version="0.14.5" />
     </ItemGroup>
 
 </Project>
