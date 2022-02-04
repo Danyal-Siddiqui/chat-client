@@ -24,7 +24,7 @@ public class MessagePublisher : IMessagePublisher
         try
         {
             _connection.Publish(
-                "foo",
+                NatsConfigurations.Subject,
                 Encoding.UTF8.GetBytes(
                     JsonSerializer.Serialize(new MessagePayload(message.Text, message.Username, message.Timestamp))));
         }

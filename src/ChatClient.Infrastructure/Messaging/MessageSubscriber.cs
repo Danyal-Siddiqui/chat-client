@@ -21,7 +21,7 @@ public class MessageSubscriber : BackgroundService
     }
     protected override Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        IAsyncSubscription s = _connection.SubscribeAsync("foo", MsgHandler);
+        IAsyncSubscription s = _connection.SubscribeAsync(NatsConfigurations.Subject, MsgHandler);
         return Task.CompletedTask;
     }
 

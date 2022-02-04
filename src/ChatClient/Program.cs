@@ -12,8 +12,6 @@ try
 {
     var builder = WebApplication.CreateBuilder(args);
     builder.Host.UseSerilog((ctx, lc) => lc.WriteTo.Console());
-
-// Add services to the container.
     builder.Services.AddTransient<IMessagePublisher, MessagePublisher>();
     builder.Services.AddTransient<IMessagingService, MessagingService>();
     builder.Services.AddSingleton<IMessageRepository, MessageRepository>();

@@ -33,7 +33,9 @@ public class ChatClientController : ControllerBase
         }
         catch (Exception e)
         {
-            _logger.Error(e, e.Message);
+            _logger.Error(e,
+                "Exception occur while publishing message. Exception: {ExceptionMessage}",
+                e.Message);
             return BadRequest(e.Message);
         }
     }
@@ -43,11 +45,14 @@ public class ChatClientController : ControllerBase
     {
         try
         {
-            return Ok(await _messagingService.GetAllMessage());
+            return Ok((await _messagingService.GetAllMessage())
+                .Select(m => new MessagePayload(m.Text, m.Username, m.Timestamp)));
         }
         catch (Exception e)
         {
-            _logger.Error(e, e.Message);
+            _logger.Error(e,
+                "Exception occur while get all messages. Exception: {ExceptionMessage}",
+                e.Message);
             return BadRequest(e.Message);
         }
     }
